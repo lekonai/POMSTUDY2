@@ -8,16 +8,15 @@ namespace POM_STUDY_2
         {
             InitializeComponent();
         }
-        public int tick;
+        public int seconds;
         public int min = 45;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            studyLabelSeconds.Text = tickInTheWorks.ToString() + "s"; // make sure to change this to seconds when you can
         }
 
         private void timerButton_Click(object sender, EventArgs e)
         {
-            int time = 60 * min * 1000;
             if (timer1.Enabled == false)
             {
                 timer1.Start();
@@ -31,12 +30,17 @@ namespace POM_STUDY_2
                 timerButton.BackColor = Color.Lime; timerButton.ForeColor = Color.White;
             }
         }
-        public int tickTemplate = 10;
+        public int minInTheWorks = 1; // minutes tester
+        public int tickInTheWorks = 10; // second tester
         private void timer1_Tick(object sender, EventArgs e)
         {
-            tickTemplate--;
-
-            if (tickTemplate <= 0)
+            tickInTheWorks--;
+            if (tickInTheWorks == 0 && minInTheWorks > 0)
+            {
+                minInTheWorks--;
+            }
+            studyLabelSeconds.Text = tickInTheWorks.ToString() + "s"; // remember to change to seconds
+            if (minInTheWorks <= 0)
             {
                 timer1.Stop();
                 timerButton.BackColor = Color.Lime;

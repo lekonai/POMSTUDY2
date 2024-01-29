@@ -31,8 +31,8 @@
             components = new System.ComponentModel.Container();
             timerButton = new Button();
             relaxButton = new Button();
-            timerTextLabel = new Label();
-            relaxLabel = new Label();
+            studyLabelSeconds = new Label();
+            relaxLabelSeconds = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
@@ -56,27 +56,27 @@
             relaxButton.Text = "relax...";
             relaxButton.UseVisualStyleBackColor = true;
             // 
-            // timerTextLabel
+            // studyLabelSeconds
             // 
-            timerTextLabel.AutoSize = true;
-            timerTextLabel.BackColor = Color.White;
-            timerTextLabel.Location = new Point(21, 23);
-            timerTextLabel.Name = "timerTextLabel";
-            timerTextLabel.Size = new Size(34, 15);
-            timerTextLabel.TabIndex = 2;
-            timerTextLabel.Text = "00:00";
-            timerTextLabel.TextAlign = ContentAlignment.MiddleCenter;
+            studyLabelSeconds.AutoSize = true;
+            studyLabelSeconds.BackColor = Color.White;
+            studyLabelSeconds.Location = new Point(47, 25);
+            studyLabelSeconds.Name = "studyLabelSeconds";
+            studyLabelSeconds.Size = new Size(24, 15);
+            studyLabelSeconds.TabIndex = 2;
+            studyLabelSeconds.Text = "00s";
+            studyLabelSeconds.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // relaxLabel
+            // relaxLabelSeconds
             // 
-            relaxLabel.AutoSize = true;
-            relaxLabel.BackColor = Color.White;
-            relaxLabel.Location = new Point(21, 411);
-            relaxLabel.Name = "relaxLabel";
-            relaxLabel.Size = new Size(34, 15);
-            relaxLabel.TabIndex = 3;
-            relaxLabel.Text = "00:00";
-            relaxLabel.TextAlign = ContentAlignment.MiddleCenter;
+            relaxLabelSeconds.AutoSize = true;
+            relaxLabelSeconds.BackColor = Color.White;
+            relaxLabelSeconds.Location = new Point(47, 411);
+            relaxLabelSeconds.Name = "relaxLabelSeconds";
+            relaxLabelSeconds.Size = new Size(24, 15);
+            relaxLabelSeconds.TabIndex = 3;
+            relaxLabelSeconds.Text = "00s";
+            relaxLabelSeconds.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -89,8 +89,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateBlue;
             ClientSize = new Size(800, 450);
-            Controls.Add(relaxLabel);
-            Controls.Add(timerTextLabel);
+            Controls.Add(relaxLabelSeconds);
+            Controls.Add(studyLabelSeconds);
             Controls.Add(relaxButton);
             Controls.Add(timerButton);
             Name = "Form1";
@@ -104,8 +104,8 @@
 
         private Button timerButton;
         private Button relaxButton;
-        private Label timerTextLabel;
-        private Label relaxLabel;
+        private Label studyLabelSeconds;
+        private Label relaxLabelSeconds;
         private System.Windows.Forms.Timer timer1;
     }
 }
