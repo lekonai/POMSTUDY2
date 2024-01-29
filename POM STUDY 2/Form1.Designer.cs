@@ -28,44 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            components = new System.ComponentModel.Container();
+            timerButton = new Button();
+            relaxButton = new Button();
+            timerTextLabel = new Label();
+            relaxLabel = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // button1
+            // timerButton
             // 
-            button1.Location = new Point(12, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(776, 314);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            timerButton.BackColor = Color.Lime;
+            timerButton.Location = new Point(12, 12);
+            timerButton.Name = "timerButton";
+            timerButton.Size = new Size(776, 314);
+            timerButton.TabIndex = 0;
+            timerButton.Text = "START";
+            timerButton.UseVisualStyleBackColor = false;
+            timerButton.Click += timerButton_Click;
             // 
-            // button2
+            // relaxButton
             // 
-            button2.Location = new Point(12, 332);
-            button2.Name = "button2";
-            button2.Size = new Size(776, 106);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            relaxButton.Location = new Point(12, 332);
+            relaxButton.Name = "relaxButton";
+            relaxButton.Size = new Size(776, 106);
+            relaxButton.TabIndex = 1;
+            relaxButton.Text = "relax...";
+            relaxButton.UseVisualStyleBackColor = true;
+            // 
+            // timerTextLabel
+            // 
+            timerTextLabel.AutoSize = true;
+            timerTextLabel.BackColor = Color.White;
+            timerTextLabel.Location = new Point(21, 23);
+            timerTextLabel.Name = "timerTextLabel";
+            timerTextLabel.Size = new Size(34, 15);
+            timerTextLabel.TabIndex = 2;
+            timerTextLabel.Text = "00:00";
+            timerTextLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // relaxLabel
+            // 
+            relaxLabel.AutoSize = true;
+            relaxLabel.BackColor = Color.White;
+            relaxLabel.Location = new Point(21, 411);
+            relaxLabel.Name = "relaxLabel";
+            relaxLabel.Size = new Size(34, 15);
+            relaxLabel.TabIndex = 3;
+            relaxLabel.Text = "00:00";
+            relaxLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SlateBlue;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(relaxLabel);
+            Controls.Add(timerTextLabel);
+            Controls.Add(relaxButton);
+            Controls.Add(timerButton);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button timerButton;
+        private Button relaxButton;
+        private Label timerTextLabel;
+        private Label relaxLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
