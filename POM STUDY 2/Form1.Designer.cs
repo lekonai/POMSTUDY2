@@ -34,6 +34,7 @@
             studyLabelSeconds = new Label();
             relaxLabelSeconds = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            studyMinLabel = new Label();
             SuspendLayout();
             // 
             // timerButton
@@ -83,12 +84,23 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // studyMinLabel
+            // 
+            studyMinLabel.AutoSize = true;
+            studyMinLabel.BackColor = Color.White;
+            studyMinLabel.Location = new Point(20, 25);
+            studyMinLabel.Name = "studyMinLabel";
+            studyMinLabel.Size = new Size(24, 15);
+            studyMinLabel.TabIndex = 4;
+            studyMinLabel.Text = "0m";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(studyMinLabel);
             Controls.Add(relaxLabelSeconds);
             Controls.Add(studyLabelSeconds);
             Controls.Add(relaxButton);
@@ -107,5 +119,6 @@
         private Label studyLabelSeconds;
         private Label relaxLabelSeconds;
         private System.Windows.Forms.Timer timer1;
+        private Label studyMinLabel;
     }
 }

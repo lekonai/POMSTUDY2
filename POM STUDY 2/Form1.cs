@@ -13,6 +13,7 @@ namespace POM_STUDY_2
         private void Form1_Load(object sender, EventArgs e)
         {
             studyLabelSeconds.Text = tickInTheWorks.ToString() + "s"; // make sure to change this to seconds when you can
+            studyMinLabel.Text = minInTheWorks.ToString() + "m"; // make sure to change this to min when you can
         }
 
         private void timerButton_Click(object sender, EventArgs e)
@@ -31,16 +32,20 @@ namespace POM_STUDY_2
             }
         }
         public int minInTheWorks = 1; // minutes tester
+        public int tickInTheWorksSECS = 10;
         public int tickInTheWorks = 10; // second tester
         private void timer1_Tick(object sender, EventArgs e)
         {
             tickInTheWorks--;
-            if (tickInTheWorks == 0 && minInTheWorks > 0)
+            
+            if (tickInTheWorks < 0 && minInTheWorks > 0)
             {
                 minInTheWorks--;
+                tickInTheWorks = tickInTheWorksSECS;
             }
+            studyMinLabel.Text = minInTheWorks.ToString() + "m"; // make sure to change this to min when you can
             studyLabelSeconds.Text = tickInTheWorks.ToString() + "s"; // remember to change to seconds
-            if (minInTheWorks <= 0)
+            if (minInTheWorks == 0 && tickInTheWorks == 0)
             {
                 timer1.Stop();
                 timerButton.BackColor = Color.Lime;
